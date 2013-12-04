@@ -42,7 +42,7 @@ class moving {
       location.x=random(width);
       ve= new PVector(0, random(1, 3));
       a= new PVector(0, amax+=0.025);
-      println(amax);
+//      println(amax);
     }
   }
   void drop() {
@@ -59,6 +59,15 @@ class moving {
     textAlign(CENTER, CENTER);
     textSize(200);
     text("SWAG", width/2, height/2);
+  }
+   void cat(Catcher c) {
+    if (dist(location.x,location.y,c.l.x,c.l.y) < (bomb.width/2+c.r)) {
+      location.y=0;
+      location.x=random(width);
+      ve= new PVector(0, random(1, 3));
+      println("hit");
+//      println(l.x + c.l.x);
+    }
   }
   //    void score(){
   //     textAlign(CENTER, CENTER);
